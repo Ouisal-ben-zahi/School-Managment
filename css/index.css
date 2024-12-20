@@ -1,0 +1,488 @@
+/* Styles globaux */
+body {
+font-family: 'Comic Sans MS', cursive, sans-serif; /* Style scolaire fun */
+margin: 0;
+padding: 0;
+color: #5e95de; /* Bleu clair */
+background-color: #F3F8FF; /* Fond doux */
+overflow-x: hidden;
+}
+
+/* Barre de navigation */
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 30px;
+background-color: #5e95de;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+animation: slideDown 1s ease-out;
+}
+
+.navbar-nav a {
+color: white;
+font-weight: bold;
+margin-right: 20px;
+text-decoration: none;
+transition: color 0.3s ease, transform 0.3s ease;
+animation: bounceIn 1s ease;
+}
+
+.navbar-nav a:hover {
+color: #FFD700; /* Jaune pour le survol */
+transform: scale(1.1) rotate(-3deg);
+}
+
+.navbar-brand img {
+width: 50px;
+margin-right: 10px;
+animation: swing 1.5s ease infinite alternate;
+}
+
+.login {
+background-color: #024CAA;
+color: white;
+font-weight: bold;
+border: none;
+padding: 10px 20px;
+border-radius: 10px;
+margin-top: 20px;
+cursor: pointer;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+transition: transform 0.3s ease, background-color 0.3s ease;
+animation: buttonPulse 1.5s infinite;
+}
+
+/* Animation pour le bouton */
+.login:hover {
+background-color: #FFD700;
+color: #024CAA;
+transform: scale(1.1);
+}
+
+/* Animation swing */
+@keyframes swing {
+0% {
+transform: rotate(-5deg);
+}
+100% {
+transform: rotate(5deg);
+}
+}
+
+/* Animation slideDown */
+@keyframes slideDown {
+from {
+transform: translateY(-100%);
+}
+to {
+transform: translateY(0);
+}
+}
+
+/* Conteneur principal */
+.image-container {
+position: relative;
+width: 100%;
+height: 70vh;
+display: flex;
+align-items: center; /* Aligne verticalement au centre */
+justify-content: center; /* Aligne horizontalement au centre */
+text-align: center;
+background: linear-gradient(135deg, #D9E8FF, #B4D0F7, #D9E8FF);
+color: white;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+}
+
+/* Animation de fond */
+@keyframes rotate-bg {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
+
+.image-container::before {
+content: '';
+position: absolute;
+top: -10%;
+left: -10%;
+width: 150%;
+height: 150%;
+background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+transform: rotate(0deg);
+animation: rotate-bg 15s linear infinite;
+}
+
+/* Texte centré sur l'image */
+.text-on-image {
+position: absolute;
+top: 20%; /* Centrer verticalement */
+left: 20%; /* Centrer horizontalement */
+margin-right: 20%;
+transform: translate(-50%, -50%); /* Centre parfaitement le texte */
+z-index: 2;
+color: #024CAA;
+background: rgba(255, 255, 255, 0.8); /* Légèrement plus transparent pour un effet léger */
+padding: 20px 40px;
+border-radius: 15px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+animation: textAnimation 2s ease-in-out infinite alternate;
+}
+
+/* Animation pour le texte */
+@keyframes textAnimation {
+0% {
+transform: translateY(0);
+color: #024CAA;
+}
+50% {
+transform: translateY(-10px);
+color: #FFD700; /* Jaune dynamique */
+}
+100% {
+transform: translateY(0);
+color: #024CAA;
+}
+}
+
+/* Bouton de connexion */
+.text-on-image button {
+background-color: #024CAA;
+color: white;
+font-weight: bold;
+border: none;
+padding: 10px 20px;
+border-radius: 10px;
+margin-top: 20px;
+cursor: pointer;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+transition: transform 0.3s ease, background-color 0.3s ease;
+animation: buttonPulse 1.5s infinite;
+}
+
+/* Animation pour le bouton */
+.text-on-image button:hover {
+background-color: #FFD700;
+color: #024CAA;
+transform: scale(1.1);
+}
+
+/* Animation du bouton en pulsation */
+@keyframes buttonPulse {
+0%, 100% {
+transform: scale(1);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+50% {
+transform: scale(1.05);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+}
+#submitButton {
+background-color: #024CAA;
+color: white;
+font-weight: bold;
+border: none;
+padding: 10px 20px;
+border-radius: 10px;
+margin-top: 20px;
+cursor: pointer;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+transition: transform 0.3s ease, background-color 0.3s ease;
+animation: buttonPulse 1.5s infinite;
+}
+
+/* Service Item */
+.service-item {
+background-color: #ffffff; /* White background for the service items */
+border-radius: 12px;
+padding: 30px;
+text-align: center;
+color: #024CAA; /* School theme blue for text */
+position: relative;
+overflow: hidden;
+transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Hover Effects - Color Change and Zoom-In */
+.service-item:hover {
+transform: translateY(-15px) scale(1.05); /* Slight zoom-in on hover */
+box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+background-color: #e0f3ff; /* Light blue background on hover */
+}
+
+/* Icon Styles */
+.service-item i {
+font-size: 3rem; /* Larger icon for prominence */
+color: #024CAA; /* Initial blue color for icons */
+transition: transform 0.4s ease, color 0.4s ease;
+}
+
+/* Hover Effects for Icon */
+.service-item:hover i {
+transform: scale(1.2); /* Slight zoom effect on the icon */
+color: #FFD700; /* Gold color for icon on hover */
+}
+
+/* Title Styles */
+.service-item h5 {
+font-size: 24px;
+font-weight: bold;
+margin-top: 15px;
+color: #024CAA; /* Title in school blue */
+transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effects for Title */
+.service-item:hover h5 {
+transform: translateY(-10px); /* Slight upward movement */
+color: #FFD700; /* Gold color for title on hover */
+}
+
+/* Description Text Styles */
+.service-item p {
+font-size: 16px;
+color: #666; /* Subtle gray for description */
+margin-top: 12px;
+transition: transform 0.3s ease, opacity 0.4s ease, color 0.3s ease;
+}
+
+/* Hover Effects for Description */
+.service-item:hover p {
+transform: translateY(5px); /* Slight upward movement */
+opacity: 0.9; /* Make description slightly transparent */
+color: #333; /* Darker text color for better readability */
+}
+
+/* WOW.js FadeInUp Animation */
+.wow.fadeInUp {
+visibility: hidden;
+}
+
+.wow.fadeInUp {
+visibility: visible;
+animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(40px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+/* Testimonial Section */
+#Testimonial {
+background-color: #f4f7fa; /* Light background for contrast */
+padding: 60px 0; /* Add padding for spacing */
+}
+
+/* Section Title */
+#Testimonial .section-title {
+font-size: 32px;
+font-weight: bold;
+color: #024CAA; /* School theme blue */
+margin-bottom: 10px;
+}
+
+#Testimonial h6 {
+font-size: 18px;
+color: #666; /* Light gray for the subtitle */
+margin-bottom: 50px;
+}
+
+/* Testimonial Cards */
+.testimonial-item {
+background-color: #ffffff; /* White background for each testimonial card */
+border: 1px solid #ddd; /* Light border for a subtle effect */
+border-radius: 12px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow around the card */
+transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Testimonial Image */
+.testimonial-item img {
+width: 200px;
+height: 200px;
+border-radius: 50%;
+border: 4px solid #024CAA; /* Border around the image in school blue */
+transition: transform 0.3s ease;
+}
+
+/* Testimonial Text */
+.testimonial-text p {
+font-size: 16px;
+color: #666; /* Dark gray for the text */
+line-height: 1.6;
+}
+
+/* Hover Effects */
+.testimonial-item:hover {
+transform: translateY(-10px); /* Slightly lift the card */
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+background-color: #e0f3ff; /* Light blue background on hover */
+}
+
+.testimonial-item:hover img {
+transform: scale(1.1); /* Slight zoom effect on the image */
+}
+
+/* Name Styling */
+.testimonial-item h5 {
+font-size: 20px;
+font-weight: bold;
+color: #024CAA; /* School theme blue for name */
+margin-top: 15px;
+transition: color 0.3s ease;
+}
+
+.testimonial-item:hover h5 {
+color: #FFD700; /* Gold color for the name on hover */
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+#Testimonial .section-title {
+font-size: 28px;
+}
+
+#Testimonial h6 {
+font-size: 16px;
+}
+
+.testimonial-item {
+margin-bottom: 30px;
+}
+
+.testimonial-item img {
+width: 180px;
+height: 180px;
+}
+
+.testimonial-item h5 {
+font-size: 18px;
+}
+}
+
+/* Footer */
+footer {
+text-align: center;
+padding: 20px;
+background-color: #024CAA;
+color: white;
+animation: fadeIn 2s ease-in-out;
+box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+color: #FFD700;
+text-decoration: none;
+font-weight: bold;
+margin: 0 10px;
+}
+
+footer a:hover {
+text-decoration: underline;
+}
+
+/* FadeIn Animation for Footer */
+@keyframes fadeIn {
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+
+
+
+
+
+
+
+/* Styles Responsive */
+@media screen and (max-width: 1200px) {
+.navbar {
+padding: 10px 20px;
+}
+}
+
+@media screen and (max-width: 992px) {
+.login {
+display: none;
+}
+.navbar-nav a {
+margin-right: 15px;
+}
+.image-container {
+height: 60vh;
+}
+.text-on-image {
+width: 50%;
+font-size: 18px;
+padding: 15px;
+}
+.service-item {
+padding: 20px;
+}
+}
+
+@media screen and (max-width: 768px) {
+.login {
+display: none;
+}
+.navbar {
+flex-direction: column;
+align-items: flex-start;
+padding: 10px;
+}
+.image-container {
+height: 50vh;
+}
+.text-on-image {
+width: 80%;
+font-size: 16px;
+padding: 10px;
+}
+.service-item {
+padding: 15px;
+font-size: 14px;
+}
+}
+
+@media screen and (max-width: 576px) {
+.login {
+display: none;
+}
+.navbar-nav {
+flex-direction: column;
+align-items: flex-start;
+}
+.image-container {
+height: 40vh;
+}
+.text-on-image {
+width: 70%;
+font-size: 14px;
+padding: 8px;
+}
+.service-item {
+padding: 12px;
+}
+.service-item h5 {
+font-size: 20px;
+}
+.service-item p {
+font-size: 14px;
+}
+}
+

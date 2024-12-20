@@ -1,0 +1,288 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.button_action {
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px 15px; /* Espacement intérieur */
+    margin: 10px; /* Espacement entre les boutons */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Curseur en forme de main au survol */
+    transition: background-color 0.3s ease; /* Transition pour un effet de survol */
+}
+.sidebar {
+    font-weight:bold;
+    width: 250px; /* Largeur du menu */ 
+    height: 100vh; /* Hauteur de la fenêtre */
+    background-color: #d0e7ff; /* Couleur de fond bleu clair */
+    position: fixed; /* Fixe le menu à gauche */
+    top: 0;
+    left: 0;
+    padding: 15px;
+    overflow-y: auto; /* Permet le défilement vertical */
+    transition: transform 0.3s ease; /* Animation pour le menu */
+    transform: translateX(0); /* Affiche le menu */
+    z-index: 1000; /* Assure que le menu soit au-dessus du contenu */
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%); /* Cache le menu sur petits écrans */
+}
+
+.sidebar img {
+    display: block;
+    margin: 0 auto 20px; /* Centre l'image et ajoute une marge en bas */
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Supprime la marge par défaut */
+}
+
+.sidebar ul li {
+    margin: 10px 0; /* Marge entre les éléments de la liste */
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: block; /* Pour le rendre cliquable sur toute la largeur */
+    transition: background-color 0.3s; /* Animation lors du survol */
+}
+
+.sidebar ul li a:hover {
+    background-color: #ddd; /* Change la couleur au survol */
+}
+
+.content {
+    margin-left: 270px; /* Laisse de l'espace pour le menu sur grands écrans */
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Animation lors du changement de la marge */
+}
+h1{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+      color: white;
+}
+
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+
+/* Styles pour les messages d'erreur (si vous en avez) */
+.error-message {
+    color: red; /* Couleur rouge pour les messages d'erreur */
+    font-size: 14px; /* Taille de la police */
+}
+
+
+
+
+
+/* Style de base pour le formulaire */
+#form_insertion {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Pour être masqué par défaut */
+}
+
+/* Style pour chaque rangée du formulaire */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Style pour les groupes de champs */
+.form-group {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style pour les étiquettes */
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Style pour les champs de saisie */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group select {
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 90%;
+    transition: border-color 0.3s ease;
+}
+
+/* Changement de couleur des bordures au focus */
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus {
+    border-color: #77CDFF;
+    outline: none;
+}
+
+/* Style pour le bouton de soumission */
+input[type="submit"] {
+    background-color: #FC4100;    
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries pour écrans plus petits */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%); /* Cache le menu par défaut sur petits écrans */
+    }
+
+    .sidebar.hidden {
+        transform: translateX(0); /* Affiche le menu quand il est visible */
+    }
+
+    .content {
+        margin-left: 0; /* Supprime l'espace laissé par le menu */
+    }
+
+    .menu-toggle {
+        display: block; /* Affiche le bouton de menu */
+        cursor: pointer; /* Change le curseur au survol */
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 24px;
+        z-index: 1001; /* Pour être au-dessus du contenu */
+    }
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 12px;
+        text-align: right;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    td::before {
+        content: attr(data-label); /* Ajoute les étiquettes pour les petites tailles */
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+    }
+
+    td {
+        text-align: left; /* Meilleure lisibilité pour les petits écrans */
+    }
+    td:nth-child(1){
+        background-color: #a1a4bb;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="number"],
+    input[type="submit"] {
+        font-size: 14px;
+    }
+
+    .form-row {
+        flex-direction: column; /* Afficher en colonne sur petits écrans */
+    }
+
+    .form-group {
+        margin-right: 0; /* Retirer les marges */
+        margin-bottom: 10px; /* Espacement entre les champs */
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Cache le bouton de menu sur les écrans plus grands */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* Cache le bouton de menu */
+    }
+    .table {
+        font-size: 14px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="number"],
+    input[type="submit"] {
+        font-size: 16px;
+    }
+
+    
+}
